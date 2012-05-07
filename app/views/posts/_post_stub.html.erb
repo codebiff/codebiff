@@ -1,0 +1,29 @@
+<div class="post">
+  <header>
+    <h1><%= link_to post.title, "/#{post.slug}" %></h1>
+    
+    <div class="post-meta">
+      
+      <%= published_time_tag(post) %>
+    
+      <ul class="tags">
+      <% post.tag_list.each do |tag| %>
+        <li><%= link_to tag, "/tag/#{tag}" %></li>
+      <% end %>
+      </ul>
+    
+    <% if session[:admin] %>
+      <%= link_to "delete", post_path(post), :method => "delete", :class => "post-action", :confirm => "Are you sure?" %></li>
+      <%= link_to "edit", edit_post_path(post), :class => "post-action"%></li>            
+    <% end%>
+    
+    </div>
+    
+  </header>
+    
+  <div class="post_content">
+    <%= post.intro.html_safe %>
+  </div>
+  
+</div>
+

@@ -1,0 +1,48 @@
+<div class="post">
+  <header>
+    <h1><%= link_to @post.title, '#' %></h1>
+    
+    <div class="post-meta">
+      
+      <%= published_time_tag @post %>
+      
+      <ul class="tags">
+      <% @post.tag_list.each do |tag| %>
+        <li><%= link_to tag, "/tag/#{tag}" %></li>
+      <% end %>
+      </ul>
+
+    <% if session[:admin] %>
+      <%= link_to "delete", post_path(@post), :method => "delete", :class => "post-action", :confirm => "Are you sure?" %></li>
+      <%= link_to "edit", edit_post_path(@post), :class => "post-action"%></li>
+    <% end %>
+    
+    </div>
+    
+  </header>
+    
+  <div class="post_content">
+    <%= @post.intro.html_safe %>
+    <%= albino(@post.body).html_safe %>
+  </div>
+  
+</div>
+
+
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'codebiff'; // required: replace example with your forum shortname
+    var disqus_developer = 1;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>

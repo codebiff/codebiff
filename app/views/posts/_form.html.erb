@@ -1,0 +1,48 @@
+<div id="new_post_form">
+  
+<%= form_for(@post) do |f| %>
+    
+    <p>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    <p>
+      
+    <p>
+      <%= f.label :slug %>
+      <%= f.text_field :slug %>
+    </p>
+    
+    <p>
+      <%= f.label :tag_list %>
+      <%= f.text_field :tag_list %>
+    </p>
+    
+    <p>
+      <%= f.label :intro %>
+      <%= f.text_area :intro %>
+    </p>
+    
+    <p>
+      <%= f.label :body %>
+      <%= f.text_area :body %>
+    </p>
+    
+    <p id="published_at">
+      <%= f.label :published %>
+      <%= f.check_box :published %>
+      
+      <%= f.date_select :published_at, {}, {:disabled => true} %>
+    </p>
+     
+    <%= f.submit %>
+
+<% end %>
+
+</div>
+
+<script src="/javascripts/htmledit.js"></script>
+<script src="/javascripts/slugme.js"></script>
+<script>
+  $('textarea').htmlEdit();
+  $('#post_title').slugme('#post_slug');
+</script>

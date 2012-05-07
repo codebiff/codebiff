@@ -1,0 +1,249 @@
+@import compass/reset
+@import compass/css3
+@import compass/utilities/general/clearfix
+@import compass/typography/lists
+
+$main_color: #3C7CFF
+$typekit_header_font: "ff-meta-web-pro", serif
+$typekit_body_font: "proxima-nova", sans-serif
+$bgColor: #fff
+
+*
+  +box-sizing(border-box)
+
+body 
+  border-top: 5px solid $main_color
+  padding: 20px 0
+  font-family: $typekit_body_font, sans-serif
+  color: rgba(0,0,0,0.8)
+  background: #fff url(bg.png) center center no-repeat fixed
+  overflow-y: scroll
+  
+a 
+  font-weight: 300
+  text-decoration: none
+  cursor: pointer
+  color: $main_color
+  text-decoration: none
+  &:hover
+    text-decoration: underline
+p
+  margin-bottom: 18px
+  line-height: 1.4em
+
+em
+  font-style: italic
+
+strong
+  font-weight: 700
+
+.container 
+  width: 960px
+  margin: 0 auto
+  +clearfix
+
+#main_content 
+  width: 680px
+  float: left
+  
+  h1 
+    font: bold 24px/1.2em $typekit_header_font, serif 
+    margin-bottom: 20px 
+  
+  h3
+    font-weight: 700
+    font-size: 20px
+    margin-bottom: 18px
+    
+  h4
+    font-weight: 700
+    font-size: 18px
+    margin-bottom: 3px
+  
+  ul
+    margin-left: 20px
+    margin-bottom: 18px
+    a
+      font-size: 14px
+      font-weight: 300
+    
+  .post 
+    margin-bottom: 40px
+
+    header 
+      margin-bottom: 25px
+      h1
+        margin-bottom: 0px
+
+    .post-meta 
+      +clearfix
+      color: rgba(0,0,0,0.5)
+      font-size: 12px
+      font-style: italic
+      padding-top: 5px
+      line-height: 1em
+      time
+        padding-left: 16px
+        background: url(clock-small.png) 0 -1px no-repeat
+      ul.tags
+        display: inline
+        margin-left: 20px
+        padding-bottom: 4px
+        li
+          background: url(tag-small.png) 0 -1px no-repeat
+          display: inline
+          padding-left: 13px
+          a
+            font-weight: 300
+      a.post-action
+        float: right
+        padding-left: 10px
+    
+    .post_content                
+    
+      blockquote
+        padding: 0 30px
+        font-size: 14px
+        font-style: italic
+        color: rgba(0,0,0,0.5)
+    
+      code
+        color: rgba(255,255,255,0.8)
+        background: rgba(0,0,0,0.8)
+        font-family: Courier, monospace
+        font-size: 14px
+        +border-radius(5px)
+        line-height: 1.2em
+        padding: 0 7px 3px 6px
+        display: inline-block
+        
+      .highlight
+        color: rgba(255,255,255,0.8)
+        width: 100%
+        background: rgba(0,0,0,0.8)
+        padding: 10px 15px
+        font-family: Courier, monospace
+        font-size: 14px
+        margin: 0 0 18px 0
+        +border-radius(5px)
+        line-height: 1.2em
+        overflow: auto
+        
+  input[type=text], input[type=password]
+    display: inline-block
+    margin: 5px 0 0 5px
+    width: 200px
+    color: $main_color
+    font: normal 14px/1.2em $typekit_body_font, sans-serif
+    border: none
+    border-bottom: 1px dotted rgba(0,0,0,0.3)
+    &:focus
+      outline: none
+      
+  input[type=submit]
+    position: relative
+    border: none
+    background: none
+    font: normal 14px/1.2em $typekit_body_font, sans-serif
+    font-weight: bold
+    color: $main_color
+    &:hover
+      cursor: pointer
+      text-decoration: underline
+
+  h1.fourohfour
+    font-size: 280px
+    text-align: center
+    color: $main_color
+  p.fourohfour
+    text-align: center
+      
+  #new_post_form
+    form
+      label
+        width: 80px
+        text-align: right
+        padding-right: 10px
+        display: inline-block
+      textarea
+        font-family: monospace
+        font-size: 14px
+        border: 1px solid rgba(0,0,0,0.5)
+        width: 100%
+        background: rgba(255,255,255,0.8)
+      
+      
+      
+      
+#sidebar 
+  width: 260px
+  float: right
+  
+  #logo
+    width: 245px
+    margin: 0 auto
+    margin-bottom: 20px
+    
+  .sidebar-box
+    +clearfix
+    overflow: visible
+    width: 100%
+    padding: 0 10px
+    margin-bottom: 30px
+    font-size: 12px
+    
+    h3
+      line-height: 1.6em
+      border-bottom: 1px dotted rgba(0,0,0,0.3)
+      margin-bottom: 5px
+      font-size: 18px
+    ul
+      padding-left: 10px
+      line-height: 1.2em
+      font-size: 14px
+    ul.tags
+      li
+        display: inline-block
+        font-size: 12px
+        line-height: 1.2em
+        a
+          font-weight: 300
+          background: url(tag-small.png) 0 0 no-repeat
+          padding-left: 14px
+                 
+    input[type=text]
+      display: inline-block
+      margin: 5px 0 0 5px
+      width: 200px
+      color: $main_color
+      font: normal 14px/1.2em $typekit_body_font, sans-serif
+      border: none
+      border-bottom: 1px dotted rgba(0,0,0,0.3)
+      &:focus
+        outline: none
+      
+    input[type=submit]
+      position: relative
+      border: none
+      background: none
+      font: normal 14px/1.2em $typekit_body_font, sans-serif
+      font-weight: bold
+      color: $main_color
+      &:hover
+        cursor: pointer
+        text-decoration: underline
+      
+#footer
+  p
+    font-size: 12px
+    text-align: center
+    color: rgba(0,0,0,0.4)
+
+#hosting
+  text-align: center
+        
+#dsq-subscribe, .dsq-brlink
+  display: none
+  
+#dsq-content h3
+  font-size: 14px

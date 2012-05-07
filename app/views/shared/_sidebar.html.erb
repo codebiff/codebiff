@@ -1,0 +1,60 @@
+<div id="sidebar">
+  
+  <%= link_to image_tag("logo.png", :id => "logo"), root_url %>
+  
+  <div class="sidebar-box" id="social">
+    <%= link_to image_tag("twitter.png"), "http://twitter.com/#!/codebiff" %>
+    <%= link_to image_tag("rss.png"), "/feed.rss" %>
+  </div>
+  
+  <div class="sidebar-box">
+    <p>I'm Dave Nicholson, a part-time web developer trying to learn enough of this shit to quit my day job and go pro. Help me out!</p>
+  </div>
+  
+  <div class="sidebar-box">
+    <h3>search</h3> 
+    <%= form_tag posts_path, :method => :get do %> 
+      <%= text_field_tag :q, nil, {:placeholder => "I'm looking for..."} %>
+      <%= submit_tag "go" %>
+    <% end %>
+  </div>
+  
+  <div class="sidebar-box">
+    <h3>navigation</h3>
+    <ul>
+      <li><%= link_to "home", root_url %></li>
+      <li><%= link_to "about", about_url %></li>
+      <li><%= link_to "archive", archive_url %></li>
+      <li><%= link_to "contact", contact_url %></li>
+    </ul>
+  </div>
+  
+  <div class="sidebar-box">
+    <h3>tags</h3>
+    <ul class="tags">
+      <% Post.tag_counts.each do |tag| %>
+        <li><%= link_to tag.name, "/tag/#{tag.name}" %></li>
+      <% end %>      
+    </ul>
+  </div>
+  
+<% if session[:admin] %>
+  <div class="sidebar-box">
+    <h3>admin tools</h3>
+    <ul>
+      <li><%= link_to "new post", new_post_url %></li>
+      <li><%= link_to "logout", "/logout" %></li>
+    </ul>
+  </div>
+<% end %>
+
+  <div class="sidebar-box" id="hosting">
+    <%= link_to image_tag("hosting-by-vps.png"), "http://vps.net" %>
+  </div>
+
+  <div class="sidebar-box" id="footer">
+    <p>&copy; Dave Nicholson 2012</p>
+  </div>
+
+  
+</div> <!-- /#sidebar -->

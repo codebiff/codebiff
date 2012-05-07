@@ -1,0 +1,15 @@
+<% if params[:q] %>
+  <h1>Posts including '<%= params[:q].downcase %>'</h1>
+<% end %>
+
+<% if !@posts.empty? %>
+
+  <% @posts.each do |post| %>
+    <%= render :partial => 'post_stub', :locals => {:post => post} %>
+  <% end %>
+
+<% else %>
+
+  <p>No posts found</p>
+
+<% end %>

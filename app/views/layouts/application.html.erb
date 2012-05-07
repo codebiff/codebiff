@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Codebiff</title>
+  <%= auto_discovery_link_tag(:rss, "http://#{request.host}/feed.rss") %>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <script type="text/javascript" src="http://use.typekit.com/zlh3kxf.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<body>
+  
+  <div class="container">
+
+    <div id="main_content">
+      <%= yield %>
+    </div>
+    
+    <%= render :partial => "shared/sidebar" %>
+    
+  </div> <!-- /.container>
+  
+</body>
+
+
+</body>
+</html>
