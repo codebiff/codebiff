@@ -1,6 +1,6 @@
 require "bundler/capistrano"
 
-server "109.123.115.228", :web, :app, :db, primary: true
+server "109.123.127.137", :web, :app, :db, primary: true
 
 set :application, "codebiff"
 set :user, "dave"
