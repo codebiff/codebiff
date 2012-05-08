@@ -8,7 +8,7 @@ Codebiff::Application.configure do
   config.consider_all_requests_local       = false
   
   config.action_controller.perform_caching = true
-  config.action_controller.page_cache_directory = "public/cache"
+  config.action_controller.page_cache_directory = Rails.root.join("public/cache")
   
 
   # Disable Rails's static asset server (Apache or nginx will already do this)
