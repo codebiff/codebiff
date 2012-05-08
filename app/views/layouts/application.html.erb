@@ -3,6 +3,7 @@
 <head>
   <title>Codebiff</title>
   <%= auto_discovery_link_tag(:rss, "http://#{request.host}/feed.rss") %>
+  <meta name="generated" value="<%= Time.now %>">
   <link rel="shortcut icon" href="/favicon.ico" />
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
