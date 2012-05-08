@@ -20,5 +20,15 @@ module ApplicationHelper
     end
   end
   
+  def page_title
+    if @post
+      content_tag :title, "#{@post.title} | Codebiff"
+    elsif @page_title
+      content_tag :title, "#{@page_title} | Codebiff"
+    else
+      content_tag :title, "Codebiff"
+    end
+  end
+  
 end
 

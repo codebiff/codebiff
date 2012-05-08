@@ -3,16 +3,20 @@ class PagesController < ApplicationController
   caches_page :archive, :about, :contact 
   
   def archive
+    @page_title = "Archive"
     @posts = Post.published.archive
   end
   
   def about
+    @page_title = "About me"
   end
   
   def contact
+    @page_title = "Contact Me"
   end
   
   def login
+    @page_title = "None shall pass"
   end
   
   def feed

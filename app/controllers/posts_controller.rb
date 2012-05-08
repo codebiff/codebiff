@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   before_filter :authenticate, :only => [:edit, :new, :destroy]
   
   def index
+    @page_title = "Search for '#{params[:q]}'" if params[:q]
     @posts = Post.text_search(params[:q])
     @posts = @posts.published unless session[:admin]
   end
@@ -23,6 +24,7 @@ class PostsController < ApplicationController
   end
   
   def tag
+    @page_title = "Tagged as #{params[:tag]}"
     @posts = Post.tagged_with(params[:tag])
     @posts = @posts.published unless session[:admin]
     render :index
