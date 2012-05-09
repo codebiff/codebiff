@@ -13,6 +13,7 @@ Codebiff::Application.routes.draw do
   match "/login"        => "pages#login"
   match "/signin"       => "pages#signin"
   match "/logout"       => "pages#logout"
+  match "/admin"        => "posts#admin"
   
   match "/tag/:tag"     => "posts#tag"
   

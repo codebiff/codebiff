@@ -38,15 +38,13 @@
     </ul>
   </div>
   
-<% if session[:admin] %>
-  <div class="sidebar-box">
+  <div class="admin-links sidebar-box">
     <h3>admin tools</h3>
     <ul>
       <li><%= link_to "new post", new_post_url %></li>
       <li><%= link_to "logout", "/logout" %></li>
     </ul>
   </div>
-<% end %>
 
   <div class="sidebar-box" id="hosting">
     <%= link_to image_tag("hosting-by-vps.png"), "http://vps.net" %>

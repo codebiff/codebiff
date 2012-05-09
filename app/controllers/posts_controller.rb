@@ -62,4 +62,7 @@ class PostsController < ApplicationController
     redirect_to posts_url
   end
   
+  def admin
+  end
+  
 end

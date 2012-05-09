@@ -3,6 +3,10 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 jQuery ->
+  
+  if $(".post").length
+    $.getScript("/admin")
+  
   $("#post_published").click ->
     if $(this).attr('checked')
       $("#published_at").children("select").removeAttr("disabled")

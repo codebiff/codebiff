@@ -12,10 +12,10 @@
       <% end %>
       </ul>
     
-    <% if session[:admin] %>
-      <%= link_to "delete", post_path(post), :method => "delete", :class => "post-action", :confirm => "Are you sure?" %></li>
-      <%= link_to "edit", edit_post_path(post), :class => "post-action"%></li>            
-    <% end%>
+      <div class="admin-links">
+        <%= link_to "delete", post_path(post), :method => "delete", :class => "post-action", :confirm => "Are you sure?" %></li>
+        <%= link_to "edit", edit_post_path(post), :class => "post-action"%></li>            
+      </div>
     
     </div>
     
