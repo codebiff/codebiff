@@ -18,4 +18,12 @@ class Post < ActiveRecord::Base
     self.all.group_by { |p| p.published_at.beginning_of_month }
   end
   
+  after_create  :clear_cache
+  after_update  :clear_cache
+  after_destroy :clear_cache
+  
+  def clear_cache
+    FileUtils.rm_r("#{Rails.root}/public/cache")
+  end
+  
 end
