@@ -1,6 +1,4 @@
-<% if params[:q] %>
-  <h1>Posts including '<%= params[:q].downcase %>'</h1>
-<% end %>
+<%= content_tag(:h1, @page_title) if @page_title.present? %>
 
 <% if !@posts.empty? %>
 

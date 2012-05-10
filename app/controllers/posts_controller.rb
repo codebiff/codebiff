@@ -24,9 +24,9 @@ class PostsController < ApplicationController
   end
   
   def tag
-    @page_title = "Tagged as #{params[:tag]}"
     @posts = Post.tagged_with(params[:tag])
     @posts = @posts.published unless session[:admin]
+    @page_title = "#{view_context.pluralize(@posts.count, 'post')} tagged as '#{params[:tag]}'"
     render :index
   end
   

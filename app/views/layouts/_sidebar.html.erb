@@ -33,7 +33,7 @@
     <h3>tags</h3>
     <ul class="tags">
       <% Post.tag_counts.each do |tag| %>
-        <li><%= link_to tag.name, "/tag/#{tag.name}" %></li>
+        <li><%= link_to tag.name, "/tag/#{tag.name}", :title => "#{pluralize(tag.count,'post')} tagged with '#{tag.name}'" %></li>
       <% end %>      
     </ul>
   </div>
