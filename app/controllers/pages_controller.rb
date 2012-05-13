@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   
   caches_page :archive, :about, :contact 
-  
+ 
   def archive
     @page_title = "Archive"
     @posts = Post.published.archive

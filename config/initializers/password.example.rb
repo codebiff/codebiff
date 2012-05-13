@@ -1,0 +1,1 @@
+ENV['ADMIN_PASSWD'] = "batman"

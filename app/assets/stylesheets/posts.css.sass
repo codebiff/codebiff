@@ -44,6 +44,17 @@ strong
 
 .admin-links
   display: none
+  float: right
+
+ul.tags
+  li
+    display: inline-block
+    font-size: 12px
+    line-height: 1.2em
+    a
+      font-weight: 300
+      background: url(tag-small.png) 0 0 no-repeat
+      padding-left: 14px
 
 
 #main_content 
@@ -75,35 +86,28 @@ strong
     margin-bottom: 40px
 
     header 
-      margin-bottom: 25px
+      margin-bottom: 20px
+
       h1
         margin-bottom: 0px
 
     .post-meta 
-      +clearfix
-      color: rgba(0,0,0,0.5)
-      font-size: 12px
-      font-style: italic
-      padding-top: 5px
-      line-height: 1em
+
       time
+        +clearfix
         padding-left: 16px
-        background: url(clock-small.png) 0 -1px no-repeat
+        background: url(clock-small.png) 0 3px no-repeat
+        color: rgba(0,0,0,0.5)
+        font-size: 12px
+        // font-style: italic
+        padding-top: 5px
+        line-height: 1em
+
       ul.tags
-        display: inline
-        margin-left: 20px
-        padding-bottom: 4px
-        li
-          background: url(tag-small.png) 0 -1px no-repeat
-          display: inline
-          padding-left: 13px
-          a
-            font-weight: 300
-            font-size: 12px
-            
-      a.post-action
-        float: right
-        padding-left: 10px
+        display: inline-block
+        margin-bottom: 2px
+
+        
     
     .post_content                
     
@@ -207,15 +211,6 @@ strong
       padding-left: 10px
       line-height: 1.2em
       font-size: 14px
-    ul.tags
-      li
-        display: inline-block
-        font-size: 12px
-        line-height: 1.2em
-        a
-          font-weight: 300
-          background: url(tag-small.png) 0 0 no-repeat
-          padding-left: 14px
                  
     input[type=text]
       display: inline-block

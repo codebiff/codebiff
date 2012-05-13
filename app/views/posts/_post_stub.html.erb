@@ -13,8 +13,8 @@
       </ul>
     
       <div class="admin-links">
-        <%= link_to "delete", post_path(post), :method => "delete", :class => "post-action", :confirm => "Are you sure?" %></li>
-        <%= link_to "edit", edit_post_path(post), :class => "post-action"%></li>            
+        <%= link_to "edit", edit_post_path(post), :class => "post-action post-edit"%> |             
+        <%= link_to "delete", post_path(post), :method => "delete", :class => "post-action post-delete", :confirm => "Are you sure?" %>
       </div>
     
     </div>
