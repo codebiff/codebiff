@@ -1,7 +1,11 @@
 @import compass/reset
 @import compass/css3
 @import compass/utilities/general/clearfix
+@import compass/utilities/sprites
 @import compass/typography/lists
+
+@import icons/*.png
+@include all-icons-sprites
 
 $main_color: #3C7CFF
 $typekit_header_font: "ff-meta-web-pro", serif
@@ -53,7 +57,8 @@ ul.tags
     line-height: 1.2em
     a
       font-weight: 300
-      background: url(tag-small.png) 0 0 no-repeat
+      // background: url(tag-small.png) 0 0 no-repeat
+      @include icons-sprite(tag-small)
       padding-left: 14px
 
 
