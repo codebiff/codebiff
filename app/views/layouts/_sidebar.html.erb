@@ -1,10 +1,10 @@
 <div id="sidebar">
   
-  <%= link_to image_tag("logo.png", :id => "logo"), root_url %>
+  <%= link_to "home", root_url, :id => "logo" %>
   
   <div class="sidebar-box" id="social">
-    <%= link_to image_tag("twitter.png"), "http://twitter.com/#!/codebiff" %>
-    <%= link_to image_tag("rss.png"), "/feed.rss" %>
+    <%= link_to "twitter", "http://twitter.com/#!/codebiff", :id => "twitter" %>
+    <%= link_to "rss", "/feed.rss", :id => "rss" %>
   </div>
   
   <div class="sidebar-box">
@@ -47,7 +47,7 @@
   </div>
 
   <div class="sidebar-box" id="hosting">
-    <%= link_to image_tag("hosting-by-vps.png"), "http://vps.net" %>
+    <%= link_to "hosted by VPS.net", "http://vps.net", :id => "vps" %>
   </div>
 
   <div class="sidebar-box" id="footer">

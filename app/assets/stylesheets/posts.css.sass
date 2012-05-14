@@ -3,6 +3,8 @@
 @import compass/utilities/general/clearfix
 @import compass/utilities/sprites
 @import compass/typography/lists
+@import compass/typography/text/replacement
+@import compass/css3/inline-block
 
 @import icons/*.png
 @include all-icons-sprites
@@ -52,13 +54,13 @@ strong
 
 ul.tags
   li
-    display: inline-block
+    @include inline-block
     font-size: 12px
     line-height: 1.2em
     a
       font-weight: 300
       // background: url(tag-small.png) 0 0 no-repeat
-      @include icons-sprite(tag-small)
+      @include icons-sprite("tag-small")
       padding-left: 14px
 
 
@@ -101,7 +103,8 @@ ul.tags
       time
         +clearfix
         padding-left: 16px
-        background: url(clock-small.png) 0 3px no-repeat
+        // background: url(clock-small.png) 0 3px no-repeat
+        @include icons-sprite("clock-small", $offset-y: 3px)
         color: rgba(0,0,0,0.5)
         font-size: 12px
         // font-style: italic
@@ -109,7 +112,7 @@ ul.tags
         line-height: 1em
 
       ul.tags
-        display: inline-block
+        @include inline-block
         margin-bottom: 2px
 
         
@@ -130,7 +133,7 @@ ul.tags
         +border-radius(5px)
         line-height: 1.2em
         padding: 2px 7px 3px 6px
-        display: inline-block
+        @include inline-block
         
       .highlight
         color: rgba(255,255,255,0.8)
@@ -145,7 +148,7 @@ ul.tags
         overflow: auto
         
   input[type=text], input[type=password]
-    display: inline-block
+    @include inline-block
     margin: 5px 0 0 5px
     width: 200px
     color: $main_color
@@ -179,7 +182,7 @@ ul.tags
         width: 80px
         text-align: right
         padding-right: 10px
-        display: inline-block
+        @include inline-block
       textarea
         font-family: monospace
         font-size: 14px
@@ -195,9 +198,28 @@ ul.tags
   float: left
   
   #logo
-    width: 245px
-    margin: 0 auto
+    @include icons-sprite("logo")
+    width: icons-sprite-width("logo")
+    height: icons-sprite-height("logo")
+    display: block
+    @include hide-text
     margin-bottom: 20px
+
+  #social
+    #twitter
+      @include icons-sprite("twitter")
+      width: icons-sprite-width("twitter")
+      height: icons-sprite-height("twitter")
+      @include inline-block
+      @include hide-text
+
+  #social
+    #rss
+      @include icons-sprite("rss")
+      width: icons-sprite-width("rss")
+      height: icons-sprite-height("rss")
+      @include inline-block
+      @include hide-text
     
   .sidebar-box
     +clearfix
@@ -218,7 +240,7 @@ ul.tags
       font-size: 14px
                  
     input[type=text]
-      display: inline-block
+      @include inline-block
       margin: 5px 0 0 5px
       width: 180px
       color: $main_color
@@ -247,6 +269,13 @@ ul.tags
 
 #hosting
   text-align: center
+  #vps
+    @include icons-sprite("vps")
+    width: icons-sprite-width("vps")
+    height: icons-sprite-height("vps")
+    @include inline-block
+    @include hide-text
+
         
 #dsq-subscribe, .dsq-brlink
   display: none
