@@ -13,11 +13,15 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-
-.DS_Store
 /public/cache/*
 /public/uploads/*
 /config/database.yml
 /initializers/password.rb
 
+*.DS_Store
+
 *sublime*
+
+app/.DS_Store
+
+.DS_Store
