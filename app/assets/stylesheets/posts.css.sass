@@ -5,6 +5,7 @@
 @import compass/typography/lists
 @import compass/typography/text/replacement
 @import compass/css3/inline-block
+@import mixins
 
 @import icons/*.png
 @include all-icons-sprites
@@ -59,7 +60,6 @@ ul.tags
     line-height: 1.2em
     a
       font-weight: 300
-      // background: url(tag-small.png) 0 0 no-repeat
       @include icons-sprite("tag-small")
       padding-left: 14px
 
@@ -103,11 +103,9 @@ ul.tags
       time
         +clearfix
         padding-left: 16px
-        // background: url(clock-small.png) 0 3px no-repeat
         @include icons-sprite("clock-small", $offset-y: 3px)
-        color: rgba(0,0,0,0.5)
+        color: rgba(0,0,0,0.3)
         font-size: 12px
-        // font-style: italic
         padding-top: 5px
         line-height: 1em
 
@@ -196,30 +194,21 @@ ul.tags
 #sidebar 
   width: 260px
   float: left
-  
+
   #logo
-    @include icons-sprite("logo")
-    width: icons-sprite-width("logo")
-    height: icons-sprite-height("logo")
-    display: block
-    @include hide-text
+    @include link-sprite("logo")
     margin-bottom: 20px
+    display: block
 
   #social
     #twitter
-      @include icons-sprite("twitter")
-      width: icons-sprite-width("twitter")
-      height: icons-sprite-height("twitter")
+      @include link-sprite("twitter")
       @include inline-block
-      @include hide-text
 
   #social
     #rss
-      @include icons-sprite("rss")
-      width: icons-sprite-width("rss")
-      height: icons-sprite-height("rss")
+      @include link-sprite("rss")
       @include inline-block
-      @include hide-text
     
   .sidebar-box
     +clearfix
@@ -270,11 +259,8 @@ ul.tags
 #hosting
   text-align: center
   #vps
-    @include icons-sprite("vps")
-    width: icons-sprite-width("vps")
-    height: icons-sprite-height("vps")
+    @include link-sprite("vps")
     @include inline-block
-    @include hide-text
 
         
 #dsq-subscribe, .dsq-brlink
